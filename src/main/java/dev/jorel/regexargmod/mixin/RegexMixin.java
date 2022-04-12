@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import dev.jorel.regexargmod.CustomArgumentType_1_18_R2;
 import dev.jorel.regexargmod.RegexArgumentType;
 import net.minecraft.command.argument.ArgumentTypes;
 
@@ -13,5 +14,6 @@ public class RegexMixin {
 	@Inject(at = @At("HEAD"), method = "register()V")
 	private static void init(CallbackInfo info) {
 		RegexArgumentType.register();
+		CustomArgumentType_1_18_R2.register();
 	}
 }
