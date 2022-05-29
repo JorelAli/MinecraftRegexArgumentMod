@@ -16,6 +16,19 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven { url 'https://jitpack.io' }
+ maven { url = "https://maven.fabricmc.net" } // Fabric
+    maven { url = "https://maven.shedaniel.me/" } // REI & Cloth Config
+    maven { url = 'https://maven.terraformersmc.com/' } // ModMenu
+
+    maven { url = "https://server.bbkr.space/artifactory/libs-release" } // UniversalComponents, LibGui
+    maven { // Curse, Expanded Storage
+        url = "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    mavenLocal()
 }
 
 dependencies {
@@ -26,6 +39,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation include('red.jackf:whereisit:1.14.10')
 }
 
 processResources {
